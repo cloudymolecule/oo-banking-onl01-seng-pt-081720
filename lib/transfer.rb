@@ -24,7 +24,7 @@ class Transfer
         @sender.balance = (@sender.balance - @amount)
         @receiver.balance += @amount
         @amount = 0
-        binding.pry
+        #binding.pry
         self.status = "complete"
     # else
     #   self.status = "rejected"

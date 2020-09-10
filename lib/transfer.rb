@@ -20,7 +20,7 @@ class Transfer
 
   def execute_transaction
     #binding.pry
-    if @sender.valid? == true
+    if self.sender.valid? == true
         @sender.balance = (@sender.balance - @amount)
         @receiver.balance += @amount
         @amount = 0

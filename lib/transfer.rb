@@ -1,7 +1,7 @@
 require "pry"
 
 class Transfer
-  attr_reader :sender, :receiver, :amount
+  attr_reader :sender, :receiver, :amount, :r
   attr_accessor :status
   def initialize(sender, receiver, amount)
     @sender = sender
@@ -23,6 +23,7 @@ class Transfer
     if valid? && sender.balance >= amount
       @sender.balance = (@sender.balance - @amount)
       @receiver.balance += @amount
+      @r = @amount
       @amount = 0
       self.status = "complete"
     else
@@ -33,8 +34,8 @@ class Transfer
 
   def reverse_transfer
     if @status == "complete"
-      @receiver.balance -= @amount
-      @sender.balance += @amount
+      @receiver.balance -= @r
+      @sender.balance += @r
     end
   end
 

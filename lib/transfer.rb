@@ -28,8 +28,6 @@ class Transfer
       @receiver.balance += @amount
       @amount = 0
       self.status = "complete"
-    elsif @status == "complete"
-      puts "Transaction was already excuted"
 
     end
 

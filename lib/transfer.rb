@@ -35,7 +35,7 @@ class Transfer
     if @status == "complete"
       @receiver.balance = (@receiver.balance - @amount)
       @sender.balance + @amount
-
+      binding.pry
     end
   end
 

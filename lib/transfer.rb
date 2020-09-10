@@ -20,7 +20,7 @@ class Transfer
 
   def execute_transaction
     #binding.pry
-    if BankAccount.sender.valid?
+    if sender.status == "open" && @sender.balance >= @amount
         @sender.balance = (@sender.balance - @amount)
         @receiver.balance += @amount
         @amount = 0

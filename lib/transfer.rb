@@ -20,7 +20,7 @@ class Transfer
 
   def execute_transaction
 
-    if self.sender.balance >= @amount && self.sender.status == "oen"
+    if self.sender.balance >= @amount && self.sender.status == "open"
         @sender.balance = (@sender.balance - @amount)
         @receiver.balance += @amount
         @amount = 0

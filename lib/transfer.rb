@@ -41,7 +41,7 @@ class Transfer
     #   @amount = 0
     #   self.status = "complete"
 
-    end
+    #end
 
 
   end
